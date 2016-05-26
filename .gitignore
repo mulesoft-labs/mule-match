@@ -1,0 +1,5 @@
+.eslintignore
+npm-debug.log*
+coverage
+node_modules
+dist

@@ -1,0 +1,35 @@
+---
+extends: airbnb
+
+env:
+  node: true
+  es6: true
+
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+
+settings:
+  import/resolver:
+    webpack:
+      config: "webpack/configs/config.hot.js"
+
+rules:
+  key-spacing:
+    - 2
+    -
+      mode:   "minimum"
+      align:  "value"
+  no-multi-spaces:
+    - 0
+    -
+      exceptions:
+        ImportDeclaration:        true
+        VariableDeclarator:       true
+        ArrowFunctionExpression:  true
+  comma-dangle:
+    - error
+    - never
+  max-len:
+    - 2
+    - code: 150
