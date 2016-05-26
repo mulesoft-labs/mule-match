@@ -6,30 +6,42 @@ import {
 
 const reducers = handleActions({
 
-  [SELECT_PRODUCT]: (state, action) => {
-    const i = state.findIndex((item) => item.title ===  action.payload.title);
-    return [
-      ...state.slice(0, i), // before the one we are updating
+  [SELECT_PRODUCT]: (state = {}, action) => {
+    const itemIndex   = state.allProducts.findIndex((item) => item.title ===  action.payload.title);
+    const allProducts = [
+      ...state.allProducts.slice(0, itemIndex),
       {
-        ...state[i],
+        ...state.allProducts[itemIndex],
         selected: true
       },
-      ...state.slice(i + 1) // after the one we are updating
+      ...state.allProducts.slice(itemIndex + 1)
     ];
+    const selectedProducts = allProducts.filter((item) => item.selected);
+
+    return {
+      ...state,
+      allProducts,
+      selectedProducts
+    };
   },
 
-  [IGNORE_PRODUCT]: (state, action) => {
-    const itemToIgnore  = state.find((item) => item.title === action.payload.title);
-    const filteredItems = state.filter((item) => item.title !== action.payload.title);
-
-    // Return the same items but move the ignored item to the end
-    return [
-      ...filteredItems,
+  [IGNORE_PRODUCT]: (state = {}, action) => {
+    const ignoredProduct  = state.allProducts.find((item) => item.title ===  action.payload.title);
+    const otherProducts   = state.allProducts.filter((item) => item.title !==  action.payload.title);
+    const allProducts     = [
+      ...otherProducts,
       {
-        ...itemToIgnore,
+        ...ignoredProduct,
         selected: false
       }
     ];
+    const selectedProducts = allProducts.filter((item) => item.selected);
+
+    return {
+      ...state,
+      allProducts,
+      selectedProducts
+    };
   }
 }, []);
 

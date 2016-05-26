@@ -33,3 +33,6 @@ rules:
   max-len:
     - 2
     - code: 150
+  no-confusing-arrow:
+    - error
+    - allowParens: true
