@@ -7,40 +7,28 @@ import {
 const reducers = handleActions({
 
   [SELECT_PRODUCT]: (state = {}, action) => {
-    const itemIndex   = state.allProducts.findIndex((item) => item.title ===  action.payload.title);
-    const allProducts = [
-      ...state.allProducts.slice(0, itemIndex),
-      {
-        ...state.allProducts[itemIndex],
-        selected: true
-      },
-      ...state.allProducts.slice(itemIndex + 1)
+    const product           = state.allProducts.find((item) => item.title ===  action.payload.title);
+    const allProducts       = state.allProducts.filter((item) => item.title !==  action.payload.title);
+    const selectedProducts  = [
+      ...(state.selectedProducts || []),
+      product
     ];
-    const selectedProducts = allProducts.filter((item) => item.selected);
 
     return {
       ...state,
       allProducts,
-      selectedProducts
+      selectedProducts,
+      isSelected: true
     };
   },
 
   [IGNORE_PRODUCT]: (state = {}, action) => {
-    const ignoredProduct  = state.allProducts.find((item) => item.title ===  action.payload.title);
-    const otherProducts   = state.allProducts.filter((item) => item.title !==  action.payload.title);
-    const allProducts     = [
-      ...otherProducts,
-      {
-        ...ignoredProduct,
-        selected: false
-      }
-    ];
-    const selectedProducts = allProducts.filter((item) => item.selected);
+    const allProducts = state.allProducts.filter((item) => item.title !==  action.payload.title);
 
     return {
       ...state,
       allProducts,
-      selectedProducts
+      isSelected: false
     };
   }
 }, []);

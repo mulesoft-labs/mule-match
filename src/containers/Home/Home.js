@@ -6,8 +6,9 @@ import {
 } from 'domains';
 
 export const homeState = (state) => ({
-  unselectedProducts: selectors.unselectedProducts(state),
-  currentProduct:     selectors.currentProduct(state)
+  allProducts:    selectors.allProducts(state),
+  currentProduct: selectors.currentProduct(state),
+  isSelected:     selectors.isSelected(state)
 });
 
 export const homeActions = (dispatch) => ({

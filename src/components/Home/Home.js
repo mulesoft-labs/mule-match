@@ -4,8 +4,9 @@ import propTypes                      from './PropTypes';
 import styles                         from './Home.css';
 
 const Home = ({
-  unselectedProducts,
+  allProducts,
   currentProduct,
+  isSelected,
   selectProduct,
   ignoreProduct
 }) => (
@@ -19,7 +20,8 @@ const Home = ({
     </div>
     <div className="body">
       <ProductList
-        unselectedProducts={unselectedProducts}
+        allProducts={allProducts}
+        isSelected={isSelected}
       />
       <ControlPanel
         currentProduct={currentProduct}

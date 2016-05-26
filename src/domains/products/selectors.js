@@ -8,19 +8,15 @@
 import { createSelector } from 'reselect';
 
 const allProducts = (state) => state.products.allProducts;
-
-const unselectedProducts = createSelector(
-  allProducts,
-  items => (items ? items.filter((item) => !item.selected) : [])
-);
+const isSelected  = (state) => state.products.isSelected;
 
 const currentProduct = createSelector(
-  unselectedProducts,
+  allProducts,
   items => items[0]
 );
 
 export default {
   allProducts,
-  unselectedProducts,
+  isSelected,
   currentProduct
 };
