@@ -1,21 +1,22 @@
 import { combineReducers } from 'redux';
 import {
   actions   as productsActions,
-  reducers  as productsReducers,
-  selectors as productsSelectors
+  selectors as productsSelectors,
+  reducers  as productsReducers
 } from './products';
 
 const actions = {
   ...productsActions
 };
 
-const reducers = combineReducers({
-  products: productsReducers
-});
-
 const selectors = {
   ...productsSelectors
 };
+
+
+const reducers = combineReducers({
+  products: productsReducers
+});
 
 export {
   actions,

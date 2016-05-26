@@ -2,6 +2,8 @@
 
 A simple swapping app to use as a Reference app for React applications.
 
+![Mule match](app-sample.png)
+
 This app is built using the following tools:
 
 * React
