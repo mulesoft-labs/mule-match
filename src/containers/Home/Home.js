@@ -6,14 +6,14 @@ import {
 } from 'domains';
 
 export const homeState = (state) => ({
-  allProducts:    selectors.allProducts(state),
-  currentProduct: selectors.currentProduct(state),
-  isSelected:     selectors.isSelected(state)
+  allFeatures:    selectors.allFeatures(state),
+  currentFeature: selectors.currentFeature(state),
+  lastAction:     selectors.isSelected(state)
 });
 
 export const homeActions = (dispatch) => ({
-  selectProduct: (payload) => dispatch(actions.selectProduct(payload)),
-  ignoreProduct: (payload) => dispatch(actions.ignoreProduct(payload))
+  selectFeature: (payload) => dispatch(actions.selectFeature(payload)),
+  ignoreFeature: (payload) => dispatch(actions.ignoreFeature(payload))
 });
 
 export default connect(homeState, homeActions)(Home);

@@ -2,34 +2,34 @@ import React from 'react';
 import propTypes from './PropTypes';
 import styles from './ControlPanel.css';
 
-const onIgnoreProduct = (e, currentProduct, ignoreProduct) => {
+const onIgnoreFeature = (e, currentFeature, ignoreFeature) => {
   e.preventDefault();
-  ignoreProduct(currentProduct);
+  ignoreFeature(currentFeature);
 };
 
-const onSelectProduct = (e, currentProduct, selectProduct) => {
+const onSelectFeature = (e, currentFeature, selectFeature) => {
   e.preventDefault();
-  selectProduct(currentProduct);
+  selectFeature(currentFeature);
 };
 
 const ControlPanel = ({
-  currentProduct,
-  selectProduct,
-  ignoreProduct
+  currentFeature,
+  selectFeature,
+  ignoreFeature
 }) => {
-  if (!currentProduct) {
+  if (!currentFeature) {
     return <noscript />;
   }
   return (
     <div className={styles.controlPanel}>
       <div className="button no">
-        <a href="#" className="trigger" onClick={(e) => onIgnoreProduct(e, currentProduct, ignoreProduct)}></a>
+        <a href="#" className="trigger" onClick={(e) => onIgnoreFeature(e, currentFeature, ignoreFeature)}></a>
       </div>
       <div className="button info">
-        <a href={currentProduct.url} className="trigger" target="_blank"></a>
+        <a href={currentFeature.url} className="trigger" target="_blank"></a>
       </div>
       <div className="button yes">
-        <a href="#" className="trigger" onClick={(e) => onSelectProduct(e, currentProduct, selectProduct)}></a>
+        <a href="#" className="trigger" onClick={(e) => onSelectFeature(e, currentFeature, selectFeature)}></a>
       </div>
     </div>
   );

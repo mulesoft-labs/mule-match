@@ -1,21 +1,21 @@
 import { combineReducers } from 'redux';
 import {
-  actions   as productsActions,
-  selectors as productsSelectors,
-  reducers  as productsReducers
-} from './products';
+  actions   as featuresActions,
+  selectors as featuresSelectors,
+  reducers  as featuresReducers
+} from './features';
 
 const actions = {
-  ...productsActions
+  ...featuresActions
 };
 
 const selectors = {
-  ...productsSelectors
+  ...featuresSelectors
 };
 
 
 const reducers = combineReducers({
-  products: productsReducers
+  features: featuresReducers
 });
 
 export {

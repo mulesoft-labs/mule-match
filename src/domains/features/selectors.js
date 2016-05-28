@@ -7,16 +7,16 @@
  */
 import { createSelector } from 'reselect';
 
-const allProducts = (state) => state.products.allProducts;
-const isSelected  = (state) => state.products.isSelected;
+const allFeatures = (state) => state.features.allFeatures;
+const isSelected  = (state) => state.features.isSelected;
 
-const currentProduct = createSelector(
-  allProducts,
+const currentFeature = createSelector(
+  allFeatures,
   items => items[0]
 );
 
 export default {
-  allProducts,
+  allFeatures,
   isSelected,
-  currentProduct
+  currentFeature
 };

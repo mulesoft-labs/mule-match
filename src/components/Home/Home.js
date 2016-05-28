@@ -1,18 +1,18 @@
 import React  from 'react';
 import {
   ControlPanel,
-  ProductList,
+  FeatureList,
   Match
 } from 'components';
 import propTypes  from './PropTypes';
 import styles     from './Home.css';
 
 const Home = ({
-  allProducts,
-  currentProduct,
+  allFeatures,
+  currentFeature,
   isSelected,
-  selectProduct,
-  ignoreProduct
+  selectFeature,
+  ignoreFeature
 }) => (
   <div className={styles.home}>
     <div className={styles.banner}>
@@ -23,17 +23,17 @@ const Home = ({
       </div>
     </div>
     <div className={styles.body}>
-      <ProductList
-        allProducts={allProducts}
+      <FeatureList
+        allFeatures={allFeatures}
         isSelected={isSelected}
       />
       <ControlPanel
-        currentProduct={currentProduct}
-        selectProduct={selectProduct}
-        ignoreProduct={ignoreProduct}
+        currentFeature={currentFeature}
+        selectFeature={selectFeature}
+        ignoreFeature={ignoreFeature}
       />
     </div>
-    <Match display-if={isSelected && currentProduct.title === 'Data Gateway'} product={currentProduct} />
+    <Match display-if={isSelected && currentFeature.title === 'Data Gateway'} feature={currentFeature} />
   </div>
 );
 
