@@ -4,61 +4,29 @@
   width: 250px;
   height: 375px;
 
-  .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-
-    width: 220px;
-    height: 340px;
-    padding: 15px;
-    background-color: white;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    transition: all .1s linear;
-
-    /* Current card */
-    &:nth-child(1){
-      z-index: 5;
-    }
-
-    /* Other cards */
-    &:nth-child(2){
-      z-index: 4;
-      top: 7px;
-      transform: scale(0.98);
-    }
-
-    &:nth-child(3){
-      z-index: 3;
-      top: 14px;
-      transform: scale(0.96);
-    }
-
-    &:nth-child(n+4){
-      display: none;
-    }
+  /* First child */
+  :nth-child(1){
+    z-index: 5;
   }
 
-  .logo {
-    width: 200px;
-    height: 200px;
+  /* Other childs */
+  :nth-child(2){
+    z-index: 4;
+    top: 7px;
+    transform: scale(0.98);
   }
 
-  .title {
-    font-weight: bold;
-    margin: 5px;
+  :nth-child(3){
+    z-index: 3;
+    top: 14px;
+    transform: scale(0.96);
   }
 
-  .description {
-    text-align: justify;
+  :nth-child(n+4){
+    display: none;
   }
 
-  .empty {
+  :local(.empty) {
     margin-top: 100px;
     font-size: 28px;
   }
@@ -68,7 +36,7 @@
 
   .animate-yes-leave {
     animation-fill-mode: both;
-    animation: yes 0.6s linear;
+    animation: animate-yes 0.6s linear;
 
     &:before {
       transform: rotateZ(-35deg);
@@ -79,12 +47,14 @@
       position: absolute;
       top: 15px;
       left: 5px;
+      z-index: 6;
     }
   }
 
   .animate-no-leave {
     animation-fill-mode: both;
-    animation: no 0.6s linear;
+    animation: animate-no 0.6s linear;
+
     &:before {
       transform: rotateZ(35deg);
       background: url(http://i.imgur.com/XqQZ4KR.png) no-repeat center 10px;
@@ -94,11 +64,12 @@
       position: absolute;
       top: 15px;
       left: 5px;
+      z-index: 6;
     }
   }
 }
 
-@keyframes yes {
+@keyframes animate-yes {
   0% {
     transform: scale(1) rotateZ(0deg);
     left: 0;
@@ -113,7 +84,7 @@
   }
 }
 
-@keyframes no {
+@keyframes animate-no {
   0% {
     transform: rotateZ(360deg);
     right: 0;

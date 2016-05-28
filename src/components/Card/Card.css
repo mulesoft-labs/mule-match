@@ -1,0 +1,31 @@
+:local(.card){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  width: 220px;
+  height: 340px;
+  padding: 15px 15px 20px 15px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all .1s linear;
+
+  :local(.logo) {
+    width: 200px;
+    height: 200px;
+  }
+
+  :local(.title) {
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  :local(.description) {
+    text-align: justify;
+  }
+}

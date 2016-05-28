@@ -40,6 +40,7 @@
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
+    "babel-plugin-jsx-display-if": "^3.0.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-polyfill": "^6.9.0",
