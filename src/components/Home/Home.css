@@ -8,8 +8,10 @@
 }
 
 :local(.home){
+  display: block;
+  position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   min-width: 600px;
   margin: 0;
   padding: 0;
