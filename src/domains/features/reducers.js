@@ -1,12 +1,9 @@
 import { handleActions }  from 'redux-actions';
-import {
-  SELECT_FEATURE,
-  IGNORE_FEATURE
-} from './actions';
+import actionTypes        from './actionTypes';
 
 const reducers = handleActions({
 
-  [SELECT_FEATURE]: (state = {}, action) => {
+  [actionTypes.SELECT_FEATURE]: (state = {}, action) => {
     const selectedFeature   = state.allFeatures.find((item) => item.title ===  action.payload.title);
     const allFeatures       = state.allFeatures.filter((item) => item.title !==  action.payload.title);
     const selectedFeatures  = [
@@ -21,7 +18,7 @@ const reducers = handleActions({
     };
   },
 
-  [IGNORE_FEATURE]: (state = {}, action) => {
+  [actionTypes.IGNORE_FEATURE]: (state = {}, action) => {
     const allFeatures = state.allFeatures.filter((item) => item.title !==  action.payload.title);
 
     return {
