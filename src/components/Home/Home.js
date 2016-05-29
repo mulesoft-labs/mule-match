@@ -11,6 +11,7 @@ const Home = ({
   allFeatures,
   currentFeature,
   isSelected,
+  isMatch,
   selectFeature,
   ignoreFeature
 }) => (
@@ -33,7 +34,7 @@ const Home = ({
         ignoreFeature={ignoreFeature}
       />
     </div>
-    <Match display-if={isSelected && currentFeature && currentFeature.title === 'Data Gateway'} feature={currentFeature} />
+    <Match display-if={isMatch && currentFeature} feature={currentFeature} />
   </div>
 );
 

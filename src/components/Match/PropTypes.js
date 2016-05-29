@@ -4,7 +4,7 @@ import { PropTypes } from 'react';
 // see http://ricostacruz.com/cheatsheets/react.html#property-validation
 
 const propTypes = {
-  feature: PropTypes.arrayOf(PropTypes.object).isRequired
+  feature: PropTypes.object.isRequired
 };
 
 export default propTypes;

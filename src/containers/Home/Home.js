@@ -8,7 +8,8 @@ import {
 export const homeState = (state) => ({
   allFeatures:    selectors.allFeatures(state),
   currentFeature: selectors.currentFeature(state),
-  isSelected:     selectors.isSelected(state)
+  isSelected:     selectors.isSelected(state),
+  isMatch:        selectors.isMatch(state)
 });
 
 export const homeActions = (dispatch) => ({
