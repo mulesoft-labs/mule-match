@@ -33,7 +33,7 @@ const Home = ({
         ignoreFeature={ignoreFeature}
       />
     </div>
-    <Match display-if={isSelected && currentFeature.title === 'Data Gateway'} feature={currentFeature} />
+    <Match display-if={isSelected && currentFeature && currentFeature.title === 'Data Gateway'} feature={currentFeature} />
   </div>
 );
 
