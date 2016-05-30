@@ -6,6 +6,10 @@ import {
   reducers    as featuresReducers
 } from './features';
 import {
+  selectors as productsSelectors,
+  reducers  as productsReducers
+} from './products';
+import {
   selectors as uiSelectors,
   reducers  as uiReducers
 } from './ui';
@@ -20,11 +24,13 @@ const actions = {
 
 const selectors = {
   ...featuresSelectors,
+  ...productsSelectors,
   ...uiSelectors
 };
 
 const reducers = combineReducers({
   features: featuresReducers,
+  products: productsReducers,
   ui:       uiReducers
 });
 

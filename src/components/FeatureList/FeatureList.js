@@ -4,30 +4,27 @@ import Card                     from 'components/Card';
 import propTypes                from './PropTypes';
 import styles                   from './FeatureList.css';
 
-const getRows = (allFeatures) => {
-  if (!allFeatures.length) {
-    return <div className={styles.empty}>No features to show</div>;
-  }
-
-  return (
-    allFeatures.map((item) => (
-      <Card key={item.title} item={item} />
-    ))
-  );
-};
-
 const FeatureList = ({
   allFeatures,
   isSelected
 }) => (
   <div className={styles.featureList}>
     <ReactCSSTransitionGroup
+      display-if={allFeatures && allFeatures.length}
       transitionName={isSelected ? 'animate-yes' : 'animate-no'}
       transitionEnterTimeout={500}
       transitionLeaveTimeout={500}
     >
-      {getRows(allFeatures)}
+      {
+        allFeatures.map((item) => (
+          <Card key={item.title} item={item} />
+        ))
+      }
     </ReactCSSTransitionGroup>
+    <div className={styles.empty}>
+      <span>No more features to show</span>
+      <button className={styles.tryAgain}>Try again</button>
+    </div>
   </div>
 );
 

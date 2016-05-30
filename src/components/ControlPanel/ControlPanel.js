@@ -16,12 +16,9 @@ const ControlPanel = ({
   currentFeature,
   selectFeature,
   ignoreFeature
-}) => {
-  if (!currentFeature) {
-    return <noscript />;
-  }
-  return (
-    <div className={styles.controlPanel}>
+}) => (
+  <div className={styles.controlPanel}>
+    <div display-if={currentFeature} className="controls">
       <div className="button no">
         <a href="#" className="trigger" onClick={(e) => onIgnoreFeature(e, currentFeature, ignoreFeature)}></a>
       </div>
@@ -32,8 +29,8 @@ const ControlPanel = ({
         <a href="#" className="trigger" onClick={(e) => onSelectFeature(e, currentFeature, selectFeature)}></a>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 ControlPanel.propTypes = propTypes;
 export default ControlPanel;

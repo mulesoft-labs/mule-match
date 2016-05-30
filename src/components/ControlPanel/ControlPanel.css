@@ -1,8 +1,11 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 :local(.controlPanel){
-  display: flex;
-  flex-direction: row;
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+  }
 
   .button {
     width: 100px;
@@ -56,7 +59,7 @@
     height: 70px;
     width: 70px;
     margin-top: 25px;
-    
+
     .trigger {
       width: 65%;
       height: 65%;

@@ -5,8 +5,7 @@ const reducers = handleActions({
 
   [actionTypes.SELECT_FEATURE]: (state = {}) => ({
     ...state,
-    isSelected: true,
-    isMatch:    true
+    isSelected: true
   }),
 
   [actionTypes.IGNORE_FEATURE]: (state = {}) => ({

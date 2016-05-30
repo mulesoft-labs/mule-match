@@ -67,28 +67,28 @@ const initialState = {
         description:  'Access management enables you to control and scale usage of Anypoint Platform in your organization through user management, audit logging and enforcement of roles, business groups and environments.',
         pic:          'https://docs.google.com/uc?id=0B5cZ5hvW30XSQlEtRFBBREtwN28',
         url:          'https://docs.mulesoft.com/anypoint-mq/mq-access-management',
-        features:     [1,3,4,5]
+        features:     [3,4,5]
       },
       {
         title:        'Data Gateway',
         description:  'With Salesforce1 Lightning Connect and Anypoint Data Gateway, Salesforce users can easily and quickly connect to and access mission-critical back office data from systems like SAP, within Salesforce.',
         pic:          'https://docs.google.com/uc?id=0B5cZ5hvW30XSWnlsQ1dEOXNyLWc',
         url:          'https://www.mulesoft.com/platform/data-gateway',
-        features:     [2,3,4,5]
+        features:     [2,3,4]
       },
       {
         title:        'MQ',
         description:  'Anypoint MQ is an enterprise-class cloud messaging service that enables you to perform advanced asynchronous messaging scenarios with fully hosted and managed cloud message queues and exchanges.',
         pic:          'https://docs.google.com/uc?id=0B5cZ5hvW30XSZ1gtNEVUX2JhdjA',
         url:          'https://www.mulesoft.com/platform/anypoint-mq-message-queue',
-        features:     [2,3,4]
+        features:     [3,4,5]
       },
       {
         title:        'Partner Manager',
         description:  'Partner Manager provides an interface for managing partner settings and viewing B2B Message tracking data for all B2B transactions between you and your trading partners.',
         pic:          'https://docs.google.com/uc?id=0B5cZ5hvW30XSNDFOZEstQWlzWTQ',
         url:          'https://docs.mulesoft.com/anypoint-b2b/anypoint-partner-manager-users-guide',
-        features:     [2,3,5]
+        features:     [4,5]
       }
     ]
   }

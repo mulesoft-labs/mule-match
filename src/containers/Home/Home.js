@@ -6,10 +6,11 @@ import {
 } from 'domains';
 
 export const homeState = (state) => ({
-  allFeatures:    selectors.allFeatures(state),
-  currentFeature: selectors.currentFeature(state),
-  isSelected:     selectors.isSelected(state),
-  isMatch:        selectors.isMatch(state)
+  allFeatures:      selectors.allFeatures(state),
+  currentFeature:   selectors.currentFeature(state),
+  isSelected:       selectors.isSelected(state),
+  matchingProducts: selectors.matchingProducts(state),
+  match:            selectors.match(state)
 });
 
 export const homeActions = (dispatch) => ({

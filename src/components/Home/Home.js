@@ -11,7 +11,8 @@ const Home = ({
   allFeatures,
   currentFeature,
   isSelected,
-  isMatch,
+  matchingProducts,
+  match,
   selectFeature,
   ignoreFeature
 }) => (
@@ -34,7 +35,11 @@ const Home = ({
         ignoreFeature={ignoreFeature}
       />
     </div>
-    <Match display-if={isMatch && currentFeature} feature={currentFeature} />
+    <Match
+      display-if={match || (!currentFeature && matchingProducts)}
+      match={match}
+      potentialMatches={matchingProducts}
+    />
   </div>
 );
 
