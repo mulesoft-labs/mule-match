@@ -1,75 +1,97 @@
-:local(.featureList){
-  position: relative;
-  margin: 25px auto;
-  width: 250px;
-  height: 375px;
+:local {
 
-  /* First child */
-  :nth-child(1){
-    z-index: 5;
-  }
+  .featureList{
+    position: relative;
+    margin: 25px auto;
+    width: 250px;
+    height: 375px;
 
-  /* Other childs */
-  :nth-child(2){
-    z-index: 4;
-    top: 7px;
-    transform: scale(0.98);
-  }
+    .items {
 
-  :nth-child(3){
-    z-index: 3;
-    top: 14px;
-    transform: scale(0.96);
-  }
+      :nth-child(1){
+        z-index: 5;
+      }
 
-  :nth-child(n+4){
-    display: none;
-  }
+      :nth-child(2){
+        z-index: 4;
+        top: 7px;
+        transform: scale(0.98);
+      }
 
-  :local(.empty) {
-    margin-top: 100px;
-    font-size: 28px;
-  }
+      :nth-child(3){
+        z-index: 3;
+        top: 14px;
+        transform: scale(0.96);
+      }
 
-  /* yes-no animation */
-  $distance: 400px;
-
-  .animate-yes-leave {
-    animation-fill-mode: both;
-    animation: animate-yes 0.6s linear;
-
-    &:before {
-      transform: rotateZ(-35deg);
-      background: url(http://i.imgur.com/Zkwj970.png) no-repeat center 10px;
-      content: '';
-      width: 100px;
-      height: 50px;
-      position: absolute;
-      top: 15px;
-      left: 5px;
-      z-index: 6;
+      :nth-child(n+4){
+        display: none;
+      }
     }
-  }
 
-  .animate-no-leave {
-    animation-fill-mode: both;
-    animation: animate-no 0.6s linear;
+    .empty {
+      margin-top: 100px;
+      font-size: 1.40em;
+      text-align: center;
 
-    &:before {
-      transform: rotateZ(35deg);
-      background: url(http://i.imgur.com/XqQZ4KR.png) no-repeat center 10px;
-      content: '';
-      width: 100px;
-      height: 50px;
-      position: absolute;
-      top: 15px;
-      left: 5px;
-      z-index: 6;
+      .tryAgain {
+        width: 220px;
+        height: 40px;
+        margin-top: 25px;
+        font-size: 15px;
+        text-align: center;
+        background-color: transparent;
+        color: #00a2df;
+        border: solid 1px #00a2df;
+        transition: background .3s ease;
+        cursor: pointer;
+        outline: 0;
+
+        &:hover {
+          color: white;
+          background-color: #00a2df;
+        }
+      }
+    }
+
+    .animateYesLeave {
+      animation-fill-mode: both;
+      animation: animate-yes 0.6s linear;
+
+      &:before {
+        transform: rotateZ(-35deg);
+        background: url(http://i.imgur.com/Zkwj970.png) no-repeat center 10px;
+        content: '';
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        z-index: 6;
+      }
+    }
+
+    .animateNoLeave {
+      animation-fill-mode: both;
+      animation: animate-no 0.6s linear;
+
+      &:before {
+        transform: rotateZ(35deg);
+        background: url(http://i.imgur.com/XqQZ4KR.png) no-repeat center 10px;
+        content: '';
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        z-index: 6;
+      }
     }
   }
 }
 
-@keyframes animate-yes {
+$distance: 400px;
+@keyframes :local(animate-yes) {
   0% {
     transform: scale(1) rotateZ(0deg);
     left: 0;
@@ -84,7 +106,7 @@
   }
 }
 
-@keyframes animate-no {
+@keyframes :local(animate-no) {
   0% {
     transform: rotateZ(360deg);
     right: 0;

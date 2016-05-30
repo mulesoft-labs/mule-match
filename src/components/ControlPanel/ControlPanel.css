@@ -1,71 +1,105 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
-:local(.controlPanel){
+@define-placeholder button {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  border-radius: 50%;
+  font-size: 50px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 
-  .controls {
+@define-placeholder trigger {
+  background: white;
+  display: block;
+  border-radius: 50%;
+  width: 75%;
+  height: 75%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all .1s;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+@define-placeholder triggerActive {
+  transform: translateY(-50%) scale(0.75);
+  transition: all .05s linear;
+}
+
+@define-placeholder triggerBefore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-family: 'FontAwesome';
+}
+
+:local {
+
+  .controlPanel {
     display: flex;
     flex-direction: row;
   }
 
-  .button {
-    width: 100px;
-    height: 100px;
-    background: #eee;
-    border-radius: 50%;
-    font-size: 50px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  }
+  .buttonNo {
+    @extend button;
 
-  .trigger {
-    background: white;
-    display: block;
-    border-radius: 50%;
-    width: 75%;
-    height: 75%;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all .1s;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    .triggerNo {
+      @extend trigger;
 
-    &:active {
-      transform: translateY(-50%) scale(0.75);
-      transition: all .05s linear;
-    }
-
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      font-family: 'FontAwesome';
+      &:active {
+        @extend triggerActive;
+      }
+      &:before {
+        @extend triggerBefore;
+        content: "\f00d";
+        color: #c33;
+      }
     }
   }
 
-  .no .trigger:before {
-    content: "\f00d";
-    color: #c33;
-  }
-
-  .yes .trigger:before {
-    content: "\f004";
-    color: #3b7;
-    font-size: 40px;
-  }
-
-  .info {
+  .buttonInfo {
+    @extend button;
     height: 70px;
     width: 70px;
     margin-top: 25px;
 
-    .trigger {
+    .triggerInfo {
+      @extend trigger;
       width: 65%;
       height: 65%;
       background: white no-repeat url('http://blogs.mulesoft.com/wp-content/uploads/2014/09/icon-muleears-blue-big.png');
       background-size: 50%;
       background-position: center;
+
+      &:active {
+        @extend triggerActive;
+      }
+      &:before {
+        @extend triggerBefore;
+      }
+    }
+  }
+
+  .buttonYes {
+    @extend button;
+
+    .triggerYes {
+      @extend trigger;
+
+      &:active {
+        @extend triggerActive;
+      }
+
+      &:before {
+        @extend triggerBefore;
+        content: "\f004";
+        color: #3b7;
+        font-size: 40px;
+      }
     }
   }
 }

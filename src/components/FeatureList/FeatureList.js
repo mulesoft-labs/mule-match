@@ -6,12 +6,14 @@ import styles                   from './FeatureList.css';
 
 const FeatureList = ({
   allFeatures,
-  isSelected
+  isSelected,
+  reset
 }) => (
   <div className={styles.featureList}>
     <ReactCSSTransitionGroup
+      className={styles.items}
       display-if={allFeatures && allFeatures.length}
-      transitionName={isSelected ? 'animate-yes' : 'animate-no'}
+      transitionName={{ leave: isSelected ? styles.animateYesLeave : styles.animateNoLeave }}
       transitionEnterTimeout={500}
       transitionLeaveTimeout={500}
     >
@@ -23,7 +25,7 @@ const FeatureList = ({
     </ReactCSSTransitionGroup>
     <div className={styles.empty}>
       <span>No more features to show</span>
-      <button className={styles.tryAgain}>Try again</button>
+      <button className={styles.tryAgain} onClick={reset}>Try again</button>
     </div>
   </div>
 );
