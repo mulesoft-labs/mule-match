@@ -22,7 +22,7 @@ npm start # Start the development server on port 9999
 
 ```
 
-### Testing
+### Testing (TBC)
 
 Tests are written using Mocha and [Enzyme from Airbnb] (https://github.com/airbnb/enzyme). You can run all of them with the following commands:
 
