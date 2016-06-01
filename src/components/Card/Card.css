@@ -1,14 +1,12 @@
 :local {
+  $cardSize: 220px;
 
   .card{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-
-    width: 220px;
+    width: $cardSize;
     height: 340px;
+    position: absolute;
     padding: 15px 15px 20px 15px;
     background-color: white;
     border-radius: 5px;
@@ -17,18 +15,37 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     transition: all .1s linear;
   }
-  
+
   .logo {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $cardSize;
+    height: 170px;
+
+    .logoImage {
+      max-width: 220px;
+      max-height: 100%;
+    }
   }
 
-  .title) {
+  .title {
+    display: inline-block;
+    width: $cardSize;
+    max-height: 40px;
+    text-align: center;
+    overflow: hidden;
     font-weight: bold;
-    margin: 5px;
+    margin: 10px 0 10px 0;
+    padding: 0;
   }
 
-  .description) {
+  .description {
+    display: inline-block;
+    width: $cardSize;
+    max-height: 135px;
+    overflow: hidden;
     text-align: justify;
+    word-spacing: -1px;
   }
 }

@@ -6,7 +6,9 @@ const Card = ({
   item
 }) => (
   <div className={styles.card}>
-    <img className={styles.logo} alt={item.title} src={item.pic} />
+    <div className={styles.logo}>
+      <img className={styles.logoImage} alt={item.title} src={item.pic} />
+    </div>
     <span className={styles.title}>{item.title}</span>
     <span className={styles.description}>{item.description}</span>
   </div>
