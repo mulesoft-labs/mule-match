@@ -1,6 +1,7 @@
 import 'babel-polyfill';
-import React        from 'react';
-import { Provider } from 'react-redux';
+
+import React                  from 'react';
+import { Provider }           from 'react-redux';
 
 // Import Containers
 import { Home } from 'containers';

@@ -12,7 +12,7 @@ const isSelected  = (state) => state.features.isSelected;
 
 const currentFeature = createSelector(
   allFeatures,
-  items => items[0]
+  items => (items && items.length ? items[0] : null)
 );
 
 export default {

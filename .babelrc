@@ -2,7 +2,9 @@
   "presets": ["es2015", "react"],
   "plugins": [
     "transform-object-rest-spread",
-    "jsx-display-if"
+    "jsx-display-if",
+    "syntax-async-functions",
+    "transform-async-to-generator"
   ],
   "env": {
     "development": {

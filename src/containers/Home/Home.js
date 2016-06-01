@@ -5,7 +5,7 @@ import {
   selectors
 } from 'domains';
 
-export const homeState = (state) => ({
+const homeState = (state) => ({
   allFeatures:      selectors.allFeatures(state),
   currentFeature:   selectors.currentFeature(state),
   isSelected:       selectors.isSelected(state),
@@ -13,7 +13,8 @@ export const homeState = (state) => ({
   match:            selectors.match(state)
 });
 
-export const homeActions = (dispatch) => ({
+const homeActions = (dispatch) => ({
+  fetchFeatures: (payload) => dispatch(actions.fetchFeatures(payload)),
   selectFeature: (payload) => dispatch(actions.selectFeature(payload)),
   ignoreFeature: (payload) => dispatch(actions.ignoreFeature(payload))
 });

@@ -54,9 +54,13 @@
 
     .body {
       @extend flex;
-      flex-direction: column;
-      position: relative;
-      top: -60px;
+
+      .features {
+        @extend flex;
+        flex-direction: column;
+        position: relative;
+        top: -60px;
+      }
     }
   }
 }
