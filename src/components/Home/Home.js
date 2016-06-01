@@ -15,11 +15,14 @@ const Home = ({
   matchingProducts,
   match,
   fetchFeatures,
+  fetchProducts,
   selectFeature,
   ignoreFeature
 }) => {
-  if (!allFeatures && fetchFeatures) {
+  if (!allFeatures) {
+    // Initialize features and products
     fetchFeatures();
+    fetchProducts();
   }
 
   return (

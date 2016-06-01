@@ -1,15 +1,10 @@
 import 'babel-polyfill';
-
-import React                  from 'react';
-import { Provider }           from 'react-redux';
-
-// Import Containers
-import { Home } from 'containers';
-
-// Configure the redux store
+import React              from 'react';
+import { Provider }       from 'react-redux';
+import { Home }           from 'containers';
 import { configureStore } from './store';
 
-// The main component for this application
+// Main component for this application
 const App = ({
   initialState,
   enhancers

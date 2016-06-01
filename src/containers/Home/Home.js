@@ -15,6 +15,7 @@ const homeState = (state) => ({
 
 const homeActions = (dispatch) => ({
   fetchFeatures: (payload) => dispatch(actions.fetchFeatures(payload)),
+  fetchProducts: (payload) => dispatch(actions.fetchProducts(payload)),
   selectFeature: (payload) => dispatch(actions.selectFeature(payload)),
   ignoreFeature: (payload) => dispatch(actions.ignoreFeature(payload))
 });
