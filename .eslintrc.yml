@@ -16,6 +16,9 @@ settings:
     webpack:
       config: "webpack/configs/config.hot.js"
 
+globals:
+  CONFIG: true
+
 rules:
   key-spacing:
     - 2

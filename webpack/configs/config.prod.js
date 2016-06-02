@@ -1,6 +1,6 @@
-var configInfo    = require('config');
-var path          = require('path');
-var webpack       = require('webpack');
+var config    = require('config');
+var path      = require('path');
+var webpack   = require('webpack');
 var aliases   = require('../aliases');
 var rootPath  = path.resolve(__dirname, '../../');
 
@@ -18,8 +18,12 @@ module.exports = {
 
   plugins: [
     new webpack.webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      CONFIG: JSON.stringify(config.get('CONFIG'))
+    })
   ],
+
   progress: true,
 
   resolve: {

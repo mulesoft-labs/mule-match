@@ -1,3 +1,4 @@
+var config    = require('config');
 var path      = require('path');
 var webpack   = require('webpack');
 var aliases   = require('../aliases');
@@ -17,7 +18,10 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      CONFIG: JSON.stringify(config.get('CONFIG'))
+    })
   ],
 
   resolve: {

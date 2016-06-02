@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.3.6",
+    "config": "^1.21.0",
     "normalizr": "^2.1.0",
     "postcss-import": "^8.1.2",
     "postcss-nested": "^1.0.0",
