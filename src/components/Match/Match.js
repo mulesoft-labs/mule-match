@@ -18,9 +18,13 @@ const Match = ({
       <h2 className={styles.moreInfo}>But here are some products that you might be interested in:</h2>
       <div className={styles.items}>
       {
-        (potentialMatches.length > 3
-          ? potentialMatches.slice(0, 3)
-          : potentialMatches).map((item) => <Card item={item} />)
+        (potentialMatches.length > 3 ? potentialMatches.slice(0, 3) : potentialMatches)
+          .map((item) => (
+            <div className={styles.item} key={item.title}>
+              <Card item={item} />
+              <span className={styles.moreInfo}>More info <a href={item.url} target="_blank">here</a></span>
+            </div>
+          ))
       }
       </div>
     </div>

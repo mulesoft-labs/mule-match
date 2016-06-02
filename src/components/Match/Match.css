@@ -38,9 +38,16 @@
       display: flex;
       flex-direction: row;
 
-      > div {
-        position: relative;
-        margin-right: 10px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+          position: relative;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
       }
     }
   }
