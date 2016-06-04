@@ -18,14 +18,14 @@ const ControlPanel = ({
   ignoreFeature
 }) => (
   <div className={styles.controlPanel}>
-    <div display-if={currentFeature} className={styles.buttonNo}>
-      <a href="#" className={styles.triggerNo} onClick={(e) => onIgnoreFeature(e, currentFeature, ignoreFeature)}></a>
+    <div display-if={currentFeature} className={styles.buttonNo} onClick={(e) => onIgnoreFeature(e, currentFeature, ignoreFeature)}>
+      <a href="#" className={styles.triggerNo} ></a>
     </div>
     <div display-if={currentFeature} className={styles.buttonInfo}>
       <a href={currentFeature.url} className={styles.triggerInfo} target="_blank"></a>
     </div>
-    <div display-if={currentFeature} className={styles.buttonYes}>
-      <a href="#" className={styles.triggerYes} onClick={(e) => onSelectFeature(e, currentFeature, selectFeature)}></a>
+    <div display-if={currentFeature} className={styles.buttonYes} onClick={(e) => onSelectFeature(e, currentFeature, selectFeature)}>
+      <a href="#" className={styles.triggerYes}></a>
     </div>
   </div>
 );

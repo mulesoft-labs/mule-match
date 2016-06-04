@@ -14,7 +14,7 @@ const Match = ({
       <span className={styles.moreInfo}>More info <a href={match.url} target="_blank">here</a></span>
     </div>
     <div className={styles.potentialMatches} display-if={!match}>
-      <h1 className={styles.title}>No match found  ☹</h1>
+      <h1 className={styles.title}>No match found</h1>
       <h2 className={styles.moreInfo}>But here are some products that you might be interested in:</h2>
       <div className={styles.items}>
       {

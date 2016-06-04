@@ -6,8 +6,7 @@ import styles                   from './FeatureList.css';
 
 const FeatureList = ({
   allFeatures,
-  isSelected,
-  reset
+  isSelected
 }) => (
   <div className={styles.featureList}>
     <ReactCSSTransitionGroup
@@ -24,8 +23,7 @@ const FeatureList = ({
       }
     </ReactCSSTransitionGroup>
     <div className={styles.empty}>
-      <span>No more features to show</span>
-      <button className={styles.tryAgain} onClick={reset}>Try again</button>
+      <span>No more features to show ☹</span>
     </div>
   </div>
 );

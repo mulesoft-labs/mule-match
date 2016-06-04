@@ -33,25 +33,6 @@
       margin-top: 100px;
       font-size: 1.40em;
       text-align: center;
-
-      .tryAgain {
-        width: 220px;
-        height: 40px;
-        margin-top: 25px;
-        font-size: 15px;
-        text-align: center;
-        background-color: transparent;
-        color: #00a2df;
-        border: solid 1px #00a2df;
-        transition: background .3s ease;
-        cursor: pointer;
-        outline: 0;
-
-        &:hover {
-          color: white;
-          background-color: #00a2df;
-        }
-      }
     }
 
     .animateYesLeave {
