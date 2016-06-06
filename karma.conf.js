@@ -21,8 +21,17 @@ module.exports = function karmaConfig(config) {
     // Test results reporter to use
     // Available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters:  ['dots'],
+
     logLevel:   config.LOG_ERROR,
+
     browsers:   process.env.TRAVIS ? ['Chrome_travis_ci'] : ['PhantomJS'],
+
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     // Tell Karma with webpack config to use
     // eslint-disable-next-line global-require

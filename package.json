@@ -5,7 +5,7 @@
   "main": "webpack/servers/server.hot",
   "scripts": {
     "start": "npm run lint && node .",
-    "test": "node_modules/.bin/karma start karma.conf.js --single-run true",
+    "test": "npm run lint && node_modules/.bin/karma start karma.conf.js --single-run true",
     "lint": "eslint src"
   },
   "keywords": [
