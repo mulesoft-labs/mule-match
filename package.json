@@ -1,7 +1,7 @@
 {
-  "name": "api-manager-todo-app",
+  "name": "mule-match",
   "version": "1.0.0",
-  "description": "A sample TODO app to use as base for React applications",
+  "description": "A simple swapping app to use as reference for React applications",
   "main": "webpack/servers/server.hot",
   "scripts": {
     "start": "npm run lint && node .",
