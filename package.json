@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run lint && node .",
     "test": "npm run lint && node_modules/.bin/karma start karma.conf.js --single-run true",
-    "lint": "eslint src"
+    "lint": "eslint src --debug"
   },
   "keywords": [
     "todo",
