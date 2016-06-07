@@ -1,4 +1,11 @@
-# Mule Match [![Build Status](https://travis-ci.org/mulesoft-labs/mule-match.svg?branch=master)](https://travis-ci.org/mulesoft-labs/mule-match) ![Dependency Status][https://david-dm.org/mulesoft-labs/mule-match.svg][https://david-dm.org/mulesoft-labs/mule-match#info=dependencies&view=table] ![Dev Dependency Status][https://david-dm.org/mulesoft-labs/mule-match/dev-status.svg][https://david-dm.org/mulesoft-labs/mule-match#info=devDependencies&view=table]
+# Mule Match [![Build Status][1]][2] [![Dependency Status][3]][4] [![Dev Dependency Status][5]][6]
+
+[1]: https://travis-ci.org/mulesoft-labs/mule-match.svg?branch=master
+[2]: https://travis-ci.org/mulesoft-labs/mule-match
+[3]: https://david-dm.org/mulesoft-labs/mule-match.svg
+[4]: https://david-dm.org/mulesoft-labs/mule-match#info=dependencies&view=table
+[5]: https://david-dm.org/mulesoft-labs/mule-match/dev-status.svg
+[6]: https://david-dm.org/mulesoft-labs/mule-match#info=devDependencies&view=table
 
 A simple swapping app to use as a Reference app for React applications.
 
