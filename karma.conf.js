@@ -22,7 +22,7 @@ module.exports = function karmaConfig(config) {
     // Available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters:  ['dots'],
 
-    logLevel:   config.LOG_ERROR,
+    logLevel:   config.LOG_INFO,
 
     browsers:   process.env.TRAVIS ? ['Chrome_travis_ci'] : ['PhantomJS'],
 
@@ -37,13 +37,13 @@ module.exports = function karmaConfig(config) {
     // eslint-disable-next-line global-require
     webpack: require('./webpack/configs/config.test'),
 
-    webpackMiddleware: {
-      noInfo: true
-    },
-
-    webpackServer: {
-      noInfo: true
-    },
+    // webpackMiddleware: {
+    //   noInfo: true
+    // },
+    //
+    // webpackServer: {
+    //   noInfo: true
+    // },
 
     // Tell karma all the plugins we're going to be using to prevent warnings
     plugins: [
