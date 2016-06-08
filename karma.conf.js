@@ -2,25 +2,27 @@
 
 module.exports = function karmaConfig(config) {
   config.set({
-    client:     {
+
+    client: {
       captureConsole: true
     },
+
     frameworks: ['mocha'],
-    files:      [
+
+    files:  [
       './test/*/**.js'
     ],
 
     // Preprocess matching files before serving them to the browser
     // Available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      // Add webpack as preprocessor
-      './src/**/*.js':  ['webpack', 'sourcemap'],
+      './src/**/*.js':  ['webpack', 'sourcemap', 'coverage'],
       './test/**/*.js': ['webpack', 'sourcemap']
     },
 
     // Test results reporter to use
     // Available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters:  ['dots'],
+    reporters:  ['dots', 'coverage'],
 
     logLevel:   config.LOG_ERROR,
 
@@ -47,8 +49,14 @@ module.exports = function karmaConfig(config) {
       'karma-phantomjs-launcher',
 
       // preprocessors
-      // 'karma-coverage',
+      'karma-coverage',
       'karma-sourcemap-loader'
-    ]
+    ],
+
+    // Configure the coverage reporter
+    coverageReporter: {
+      dir:  'coverage/',
+      type: 'html'
+    }
   });
 };

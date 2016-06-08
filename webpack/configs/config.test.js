@@ -4,9 +4,6 @@ var webpack   = require('webpack');
 var aliases   = require('../aliases');
 var rootPath  = path.resolve(__dirname, '../../');
 
-// required for enzyme to work properly
-aliases['sinon'] = 'sinon/pkg/sinon';
-
 module.exports = {
   devtool: 'inline-source-map',
   output: {
@@ -26,14 +23,7 @@ module.exports = {
     // import Example from 'components/Example'
     root: [rootPath, path.join(rootPath, 'src'), path.join(rootPath, 'test')],
     extensions: ['', '.js', '.json'],
-    alias: {
-      // required for enzyme to work properly
-      'sinon': 'sinon/pkg/sinon',
-      'components': 'src/components',
-      'containers': 'src/containers',
-      'domains':    'src/domains',
-      'services':   'src/services'
-    }
+    alias: aliases
   },
 
   module: {
@@ -41,13 +31,21 @@ module.exports = {
     noParse: [
       /node_modules\/sinon\//
     ],
-    loaders: [
-      // js (code + unit tests)
+    preLoaders: [
+      // transpile all files except testing sources with babel as usual
       {
-        test: /\.js$/,
-        loaders: ['babel-loader'],
-        include: [path.join(rootPath, 'src'), path.join(rootPath, 'test')]
+        test: /\.js/,
+        loader: 'babel-loader',
+        include: [path.join(rootPath, 'test')]
       },
+      // transpile and instrument only testing sources with isparta
+      {
+        test: /\.js/,
+        loader: 'isparta-loader',
+        include: path.join(rootPath, 'src')
+      }
+    ],
+    loaders: [
       // json (for cheerios, see https://github.com/airbnb/enzyme/issues/309)
       {
         test: /\.json$/,
