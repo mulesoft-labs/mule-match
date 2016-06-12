@@ -16,7 +16,7 @@ module.exports = function karmaConfig(config) {
     // Preprocess matching files before serving them to the browser
     // Available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './src/**/*.js':  ['webpack', 'sourcemap', 'coverage'],
+      './src/**/*.js':  ['webpack', 'sourcemap'],
       './test/**/*.js': ['webpack', 'sourcemap']
     },
 
@@ -35,9 +35,22 @@ module.exports = function karmaConfig(config) {
       }
     },
 
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+      exitOnResourceError: true
+    },
+
     // Tell Karma with webpack config to use
     // eslint-disable-next-line global-require
     webpack: require('./webpack/configs/config.test'),
+
+    webpackMiddleware: {
+      noInfo: true
+    },
+
+    webpackServer: {
+      noInfo: true // please don't spam the console when running in karma!
+    },
 
     // Tell karma all the plugins we're going to be using to prevent warnings
     plugins: [
