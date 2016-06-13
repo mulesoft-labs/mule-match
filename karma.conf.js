@@ -10,14 +10,13 @@ module.exports = function karmaConfig(config) {
     frameworks: ['mocha'],
 
     files:  [
-      './test/*/**.js'
+      'test/index.js'
     ],
 
     // Preprocess matching files before serving them to the browser
     // Available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './src/**/*.js':  ['webpack', 'sourcemap'],
-      './test/**/*.js': ['webpack', 'sourcemap']
+      'test/index.js': 'webpack'
     },
 
     // Test results reporter to use

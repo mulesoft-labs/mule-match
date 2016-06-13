@@ -4,6 +4,8 @@ var webpack   = require('webpack');
 var aliases   = require('../aliases');
 var rootPath  = path.resolve(__dirname, '../../');
 
+aliases['test'] = 'src/test/src';
+
 module.exports = {
   devtool: 'inline-source-map',
   output: {
@@ -59,6 +61,11 @@ module.exports = {
         include: path.join(rootPath, 'src')
       }
     ]
+  },
+
+  isparta: {
+    embedSource: true,
+    noAutoWrap: true
   },
 
   externals: {

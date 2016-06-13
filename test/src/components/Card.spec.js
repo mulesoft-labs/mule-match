@@ -1,9 +1,6 @@
 import React        from 'react';
 import { shallow }  from 'enzyme';
 import { Card }     from 'components';
-import setup        from 'test/setup';
-
-setup();
 
 describe('Card', () => {
   let item;
