@@ -75,8 +75,11 @@ module.exports = function karmaConfig(config) {
 
     // Configure the coverage reporter
     coverageReporter: {
-      dir:  'coverage/',
-      type: 'html'
+      dir: 'coverage/',
+      reporters: [
+        { type: 'html', subdir: 'html' },
+        { type: 'lcovonly', subdir: '.' }
+      ]
     }
   });
 };
