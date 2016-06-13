@@ -19,7 +19,7 @@ const ControlPanel = ({
 }) => (
   <div className={styles.controlPanel}>
     <div display-if={currentFeature} className={styles.buttonNo} onClick={(e) => onIgnoreFeature(e, currentFeature, ignoreFeature)}>
-      <a href="#" className={styles.triggerNo} ></a>
+      <a href="#" className={styles.triggerNo}></a>
     </div>
     <div display-if={currentFeature} className={styles.buttonInfo}>
       <a href={currentFeature.url} className={styles.triggerInfo} target="_blank"></a>
