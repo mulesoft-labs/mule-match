@@ -6,9 +6,10 @@
   "scripts": {
     "start": "npm run lint && node .",
     "test": "npm run lint && node_modules/.bin/karma start karma.conf.js",
+    "test:watch": "npm run test -- --watch",
     "lint": "eslint src",
     "travis": "npm test",
-    "test:watch": "npm run test -- --watch"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
     "todo",
