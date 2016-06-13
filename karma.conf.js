@@ -1,7 +1,15 @@
-// Karma configuration
+var argv = require('yargs').argv;
 
+// Karma configuration
 module.exports = function karmaConfig(config) {
   config.set({
+
+    // If true, Karma will start and capture all configured browsers, run tests
+    // and then exit with an exit code of 0 or 1 depending on whether all tests passed or any tests failed.
+    singleRun: !argv.watch,
+
+    // Enable or disable watching files and executing the tests whenever one of these files changes
+    autoWatch:  argv.watch,
 
     client: {
       captureConsole: true

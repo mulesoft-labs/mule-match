@@ -5,9 +5,10 @@
   "main": "webpack/servers/server.hot",
   "scripts": {
     "start": "npm run lint && node .",
-    "test": "npm run lint && node_modules/.bin/karma start karma.conf.js --single-run true",
+    "test": "npm run lint && node_modules/.bin/karma start karma.conf.js",
     "lint": "eslint src",
-    "travis": "npm test"
+    "travis": "npm test",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [
     "todo",
@@ -39,7 +40,8 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.1",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "yargs": "^4.7.1"
   },
   "devDependencies": {
     "babel-core": "^6.9.0",
