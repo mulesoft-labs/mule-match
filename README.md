@@ -9,9 +9,7 @@
 [7]: https://coveralls.io/repos/github/mulesoft-labs/mule-match/badge.svg?branch=master
 [8]: https://coveralls.io/github/mulesoft-labs/mule-match?branch=master
 
-A simple swapping app to use as a Reference app for React applications.
-
-Find the Demo [here](http://mulesoft-labs.github.io/mule-match/)
+A simple swapping app to use as a Reference app for React applications. [Go to demo](http://mulesoft-labs.github.io/mule-match/).
 
 This app is built using the following tools:
 
