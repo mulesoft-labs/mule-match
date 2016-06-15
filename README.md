@@ -11,7 +11,7 @@
 
 A simple swapping app to use as a Reference app for React applications.
 
-![Mule match](app-sample.png)
+Find the Demo [here](http://mulesoft-labs.github.io/mule-match/)
 
 This app is built using the following tools:
 
@@ -23,12 +23,12 @@ This app is built using the following tools:
 
 ### Getting Started
 
-Run the following commands:
-
+Run the following commands to set up the app:
 ```
 npm install
 
-npm start # Starts the development server on port 9999
+# Starts the development server on port 9999:
+npm start
 ```
 
 ### Testing
@@ -38,7 +38,22 @@ Tests are written using [Mocha](https://mochajs.org/) and [Enzyme from Airbnb] (
 You can run all of them with the following commands:
 
 ```
-npm run test # Runs the the tests once with coverage
+# Runs the the tests once with coverage
+npm run test
 
-npm run test:watch # Watches the test & source files and re runs the tests when a change is detected
+# Watches the test & source files and re runs the tests when a change is detected
+npm run test:watch
+```
+
+### Building the app
+
+The app is hosted in [GitHub pages](https://pages.github.com/). You can deploy the app using the following commands:
+
+```
+# Builds the static source files and place them under the /dist folder
+npm run build
+
+# Pushes the /dist folder to the gh-pages branch
+npm run deploy
+
 ```

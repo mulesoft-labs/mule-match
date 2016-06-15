@@ -7,7 +7,7 @@ var rootPath  = path.resolve(__dirname, '../../');
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
-    './src/client.js'
+    './src/Playground.js'
   ],
 
   output: {
@@ -17,10 +17,11 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
-      CONFIG: JSON.stringify(config.get('CONFIG'))
+      CONFIG: JSON.stringify(config.get('CONFIG')),
+      'process.env.NODE_ENV': '"production"'
     })
   ],
 
