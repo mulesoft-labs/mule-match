@@ -21,7 +21,7 @@ This app is built using the following tools:
 
 ### Getting Started
 
-Run the following commands to set up the app:
+Run the following commands to set up the app
 ```
 npm install
 
