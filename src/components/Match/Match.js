@@ -14,18 +14,20 @@ const Match = ({
       <span className={styles.moreInfo}>More info <a href={match.url} target="_blank">here</a></span>
     </div>
     <div className={styles.potentialMatches} display-if={!match}>
-      <h1 className={styles.title}>No match found</h1>
-      <h2 className={styles.moreInfo}>But here are some products that you might be interested in:</h2>
-      <div className={styles.items}>
-      {
-        (potentialMatches.length > 3 ? potentialMatches.slice(0, 3) : potentialMatches)
-          .map((item) => (
-            <div className={styles.item} key={item.title}>
-              <Card item={item} />
-              <span className={styles.moreInfo}>More info <a href={item.url} target="_blank">here</a></span>
-            </div>
-          ))
-      }
+      <h1 className={styles.title}>No match found {potentialMatches.length === 0 ? '☹' : ''}</h1>
+      <div display-if={potentialMatches.length > 0}>
+        <h2 className={styles.moreInfo}>But here are some products that you might be interested in:</h2>
+        <div className={styles.items}>
+        {
+          (potentialMatches.length > 3 ? potentialMatches.slice(0, 3) : potentialMatches)
+            .map((item) => (
+              <div className={styles.item} key={item.title}>
+                <Card item={item} />
+                <span className={styles.moreInfo}>More info <a href={item.url} target="_blank">here</a></span>
+              </div>
+            ))
+        }
+        </div>
       </div>
     </div>
   </div>
