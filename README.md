@@ -33,7 +33,7 @@ npm start
 
 ### Testing
 
-Tests are written using [Mocha](https://mochajs.org/) and [Enzyme from Airbnb] (https://github.com/airbnb/enzyme) and they run with [Karma](http://karma-runner.github.io/).
+Tests are written using [Mocha](https://mochajs.org/) and [Enzyme from Airbnb](https://github.com/airbnb/enzyme) and they run with [Karma](http://karma-runner.github.io/).
 
 You can run all of them with the following commands:
 
