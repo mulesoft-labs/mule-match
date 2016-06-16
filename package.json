@@ -10,6 +10,7 @@
     "lint": "eslint src",
     "build:prod": "webpack -p --config webpack/configs/config.prod.js",
     "deploy": "gh-pages -d dist",
+    "publish": "npm run build:prod && npm run deploy",
     "travis": "npm test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
