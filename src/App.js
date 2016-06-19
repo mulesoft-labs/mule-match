@@ -1,8 +1,9 @@
 import 'babel-polyfill';
-import React              from 'react';
-import { Provider }       from 'react-redux';
-import { Home }           from 'containers';
-import { configureStore } from './store';
+import React                              from 'react';
+import { Router, Route, browserHistory }  from 'react-router';
+import { Provider }                       from 'react-redux';
+import { Home }                           from 'containers';
+import { configureStore }                 from './store';
 
 // Main component for this application
 const App = ({
@@ -11,8 +12,10 @@ const App = ({
 }) => {
   const store = configureStore({ initialState, enhancers });
   return (
-    <Provider store={store}>
-      <Home />
+    <Provider store={store} key="provider">
+      <Router history={browserHistory}>
+        <Route path="/" component={Home} />
+      </Router>
     </Provider>
   );
 };

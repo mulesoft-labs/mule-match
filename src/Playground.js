@@ -37,12 +37,6 @@ if (module.hot) {
   module.hot.accept('./App', () => {
     setTimeout(render);
   });
-
-  // Enable Webpack hot module replacement for reducers
-  // module.hot.accept('./reducers', () => {
-  //   const nextReducer = require('./reducers/index').default;
-  //   store.replaceReducer(nextReducer);
-  // });
 }
 
 render();

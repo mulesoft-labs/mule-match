@@ -1,4 +1,5 @@
-# Mule Match [![Build Status][1]][2] [![Coverage Status][7]][8] [![Dependency Status][3]][4] [![Dev Dependency Status][5]][6]
+# Mule Match
+[![Build Status][1]][2] [![Coverage Status][7]][8] [![Dependency Status][3]][4] [![Dev Dependency Status][5]][6]
 
 [1]: https://travis-ci.org/mulesoft-labs/mule-match.svg?branch=master
 [2]: https://travis-ci.org/mulesoft-labs/mule-match
