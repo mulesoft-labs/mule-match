@@ -4,7 +4,9 @@ var webpack   = require('webpack');
 var aliases   = require('../aliases');
 var rootPath  = path.resolve(__dirname, '../../');
 
-aliases['test'] = 'src/test/src';
+// Add new keys for tests
+aliases['test']   = 'src/test/src';
+aliases['sinon']  = 'sinon/pkg/sinon',
 
 module.exports = {
   devtool: 'inline-source-map',

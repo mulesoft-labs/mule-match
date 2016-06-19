@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 const baseUri = CONFIG.BACKEND.URI;
 
 const productService = {

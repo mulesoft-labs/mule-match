@@ -20,8 +20,6 @@ describe('Home', () => {
     isSelected = true;
     matchingProducts = [];
     match = {};
-    fetchFeatures = () => {};
-    fetchProducts = () => {};
     selectFeature = () => {};
     ignoreFeature = () => {};
     component = shallow(
