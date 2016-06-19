@@ -9,6 +9,10 @@ import chaiEnzyme from 'chai-enzyme';
 const testsContext = require.context('./src/', true, /.*\.spec\.js$/);
 testsContext.keys().forEach(testsContext);
 
+// Require `src/App.js`
+const appContext = require.context('../src/', false, /App\.js$/);
+appContext.keys().forEach(appContext);
+
 // Require `src/components/index.js`
 const containersContext = require.context('../src/containers/', false, /index\.js$/);
 containersContext.keys().forEach(containersContext);
