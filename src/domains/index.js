@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import {
   actions     as featuresActions,
   actionTypes as featuresActionTypes,
@@ -32,11 +31,11 @@ const selectors = {
   ...uiSelectors
 };
 
-const reducers = combineReducers({
+const reducers = {
   features: featuresReducers,
   products: productsReducers,
   ui:       uiReducers
-});
+};
 
 export {
   actionTypes,

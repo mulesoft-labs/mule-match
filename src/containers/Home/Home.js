@@ -1,5 +1,6 @@
 import { connect }  from 'react-redux';
 import { Home }     from 'components';
+import async        from 'containers/async';
 import {
   actions,
   selectors
@@ -14,10 +15,16 @@ const homeState = (state) => ({
 });
 
 const homeActions = (dispatch) => ({
-  fetchFeatures: (payload) => dispatch(actions.fetchFeatures(payload)),
-  fetchProducts: (payload) => dispatch(actions.fetchProducts(payload)),
   selectFeature: (payload) => dispatch(actions.selectFeature(payload)),
   ignoreFeature: (payload) => dispatch(actions.ignoreFeature(payload))
 });
 
-export default connect(homeState, homeActions)(Home);
+const resolve = ({ dispatch }) => {
+  // Initialize features and products
+  const featuresPromise = dispatch(actions.fetchFeatures());
+  const productsPromise = dispatch(actions.fetchProducts());
+
+  return Promise.all([featuresPromise, productsPromise]);
+};
+
+export default async(resolve)(connect(homeState, homeActions)(Home));

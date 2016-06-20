@@ -1,6 +1,9 @@
 import 'babel-polyfill';
-import chai       from 'chai';
-import chaiEnzyme from 'chai-enzyme';
+import chai           from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+import sinonChai      from 'sinon-chai';
+import chaiThings     from 'chai-things';
+import chaiEnzyme     from 'chai-enzyme';
 
 // To create a code coverage report for all components you have to require all the sources and test
 // See https://github.com/deepsweet/isparta-loader
@@ -26,5 +29,9 @@ const servicesContext = require.context('../src/services/', false, /index\.js$/)
 servicesContext.keys().forEach(servicesContext);
 
 // Setup libraries used for testing
-global.should = chai.should();
+chai.use(chaiAsPromised);
+chai.use(sinonChai);
+chai.use(chaiThings);
 chai.use(chaiEnzyme());
+
+global.should = chai.should();

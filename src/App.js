@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React                              from 'react';
 import { Router, Route, browserHistory }  from 'react-router';
 import { Provider }                       from 'react-redux';
+import { ReduxAsyncConnect }              from 'redux-connect';
 import { Home }                           from 'containers';
 import { configureStore }                 from './store';
 
@@ -13,7 +14,7 @@ const App = ({
   const store = configureStore({ initialState, enhancers });
   return (
     <Provider store={store} key="provider">
-      <Router history={browserHistory}>
+      <Router history={browserHistory} render={(props) => <ReduxAsyncConnect {...props} />}>
         <Route path="/" component={Home} />
       </Router>
     </Provider>
