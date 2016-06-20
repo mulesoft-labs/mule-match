@@ -1,3 +1,4 @@
+.vscode
 .eslintignore
 npm-debug.log*
 coverage
