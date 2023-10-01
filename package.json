@@ -28,14 +28,14 @@
     "url": "git://github.com/mulesoft-labs/react-webpack-redux-app.git"
   },
   "dependencies": {
-    "autoprefixer": "^6.3.6",
+    "autoprefixer": "^10.0.0",
     "config": "^1.21.0",
     "isomorphic-fetch": "^2.2.1",
     "normalizr": "^2.1.0",
-    "postcss-import": "^8.1.2",
-    "postcss-nested": "^1.0.0",
+    "postcss-import": "^13.0.0",
+    "postcss-nested": "^5.0.0",
     "postcss-simple-extend": "^1.0.0",
-    "postcss-simple-vars": "^2.0.0",
+    "postcss-simple-vars": "^6.0.0",
     "react": "^15.0.2",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.0.2",
